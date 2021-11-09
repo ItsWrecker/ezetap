@@ -51,16 +51,14 @@ android {
 
 dependencies {
 
+    implementation(project(":core"))
 
-    //implementation(project(":network"))
-
-    implementation "androidx.core:core-ktx:$core_ktx_verion"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
     implementation "androidx.appcompat:appcompat:$appcompact_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$ktx_version"
     implementation "androidx.activity:activity-compose:$compose_activity_verion"
 
     implementation "com.google.dagger:hilt-android:$hilt_version"
