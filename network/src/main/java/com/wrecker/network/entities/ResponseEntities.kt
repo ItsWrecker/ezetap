@@ -4,7 +4,7 @@ sealed class ResponseEntities {
     data class UiResponse(
         val `logo-url`: String? = null,
         val `heading-text`: String? = null,
-        val uidata: List<UiData>
+        val uidata: List<UiData> = emptyList()
     )
 
     data class UiData(

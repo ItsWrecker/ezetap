@@ -33,7 +33,7 @@ class MainMiddleware @Inject constructor(
             when (it) {
                 is NetworkStatus.Error -> Unit
                 is NetworkStatus.Loading -> Unit
-                is NetworkStatus.Success -> store.dispatch(MainAction.OnUiResponse(it.value.toString()))
+                is NetworkStatus.Success -> store.dispatch(MainAction.OnUiResponse(it.value))
             }
         }
     }

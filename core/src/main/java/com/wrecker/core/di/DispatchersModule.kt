@@ -1,4 +1,4 @@
-package com.wrecker.core.di.modules
+package com.wrecker.core.di
 
 import com.wrecker.core.dispatchers.DispatcherProviders
 import com.wrecker.core.dispatchers.DispatcherProvidersImpl

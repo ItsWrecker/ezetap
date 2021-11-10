@@ -1,4 +1,4 @@
-package com.wrecker.ezetap.di.modules
+package com.wrecker.ezetap.di
 
 import com.wrecker.core.base.Reducer
 import com.wrecker.ezetap.ui.main.MainAction

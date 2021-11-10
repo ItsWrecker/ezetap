@@ -1,4 +1,4 @@
-package com.wrecker.ezetap.di.modules
+package com.wrecker.ezetap.di
 
 import android.content.Context
 import dagger.Module

@@ -19,9 +19,9 @@ class MainViewModel @Inject constructor(
 
 
 
-    init {
-        fetchUi("")
-    }
     fun fetchUi(url: String) = dispatch(MainAction.FetchUI(url = url))
     fun fetchImage(url: String) = dispatch(MainAction.FetchImage(url = url))
+    fun updateNameValue(value: String) = dispatch(MainAction.UpdateNameValue(value))
+    fun updatePhoneValue(value: String) = dispatch(MainAction.UpdatePhoneValue(value))
+    fun updateCityValue(value: String) = dispatch(MainAction.UpdateCityValue(value))
 }

@@ -8,6 +8,9 @@ class MainReducer @Inject constructor() : Reducer<MainViewState, MainAction> {
         return when (action) {
 
             is MainAction.OnUiResponse -> stateWithUiResponse(currentState, action)
+            is MainAction.UpdateNameValue -> currentState.copy(textName = action.value)
+            is MainAction.UpdatePhoneValue -> currentState.copy(textPhone = action.value)
+            is MainAction.UpdateCityValue -> currentState.copy(textCity = action.value)
             else -> currentState
         }
     }
@@ -15,7 +18,7 @@ class MainReducer @Inject constructor() : Reducer<MainViewState, MainAction> {
     private fun stateWithUiResponse(
         currentState: MainViewState,
         action: MainAction.OnUiResponse
-    ): MainViewState = currentState.copy(data = action.data)
+    ): MainViewState = currentState.copy(uiData = action.data)
 
 
 }

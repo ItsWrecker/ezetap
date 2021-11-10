@@ -21,12 +21,13 @@ class RepositoryImpl @Inject constructor(
         try {
             val response = apiService.fetchUi()
             if (response.isSuccessful) {
-                val data = response.body() ?: return@flow emit(NetworkStatus.Error(""))
+                val data =
+                    response.body() ?: return@flow emit(NetworkStatus.Error("Empty Response Error"))
                 Log.d(TAG, data.toString())
                 return@flow emit(NetworkStatus.Success(data))
-            } else emit(NetworkStatus.Error(""))
+            } else emit(NetworkStatus.Error("Server Error"))
         } catch (exception: Exception) {
-            Log.d(TAG, exception.toString())
+            return@flow emit(NetworkStatus.Error("Error while getting ui data", cause = exception))
         }
     }
 
@@ -37,12 +38,18 @@ class RepositoryImpl @Inject constructor(
         try {
             val response = apiService.fetchImage()
             if (response.isSuccessful) {
-                val data = response.body() ?: return@flow emit(NetworkStatus.Error(""))
+                val data = response.body()
+                    ?: return@flow emit(NetworkStatus.Error("Empty response error!"))
                 Log.d(TAG, data.toString())
                 return@flow emit(NetworkStatus.Success(data))
-            } else emit(NetworkStatus.Error(""))
+            } else emit(NetworkStatus.Error("Server error!"))
         } catch (exception: Exception) {
-            Log.d(TAG, exception.toString())
+            return@flow emit(
+                NetworkStatus.Error(
+                    "Error while getting image data",
+                    cause = exception
+                )
+            )
         }
     }
 
