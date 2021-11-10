@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "ezetap"
 include ':app'
 include ':core'
+include ':network'

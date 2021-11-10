@@ -52,6 +52,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":network"))
 
     implementation "androidx.core:core-ktx:$core_ktx_version"
     implementation "androidx.appcompat:appcompat:$appcompact_version"
@@ -70,4 +71,12 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
+
+
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-moshi:${rootProject.retrofitMoshi}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.okhttp_logging_version}"
+    implementation "com.squareup.moshi:moshi-kotlin:${rootProject.moshiVersion}"
+    implementation "com.squareup.moshi:moshi-kotlin-codegen:${rootProject.moshiVersion}"
+    implementation "com.google.dagger:hilt-android:${rootProject.hilt_version}"
 }

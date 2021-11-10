@@ -13,6 +13,8 @@ buildscript {
         hilt_version = "2.38.1"
         coroutine_version = "1.5.0"
         retrofit_version = "2.9.0"
+        retrofitMoshi = "2.6.2"
+        moshiVersion = "1.11.0"
         okhttp_logging_version = "4.9.0"
 
 
